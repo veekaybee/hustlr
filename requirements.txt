@@ -1,0 +1,7 @@
+flask
+hackernews
+pyphen
+haxor
+pytest
+pylint
+pymongo
