@@ -2,6 +2,8 @@
 
 A Flask webapp with a Mongo backend that will generate a name of a startup based on Hacker News.
 
+~[](../static/startup2.png)
+
 ~~~*** Under Active Development ~~~***
 
 
