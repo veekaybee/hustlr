@@ -2,8 +2,36 @@ version: '3'
 
 services:
   web:
-    build: .
+    build: ./hustlr
+    restart: always
     ports:
-      - "5000:5000"
+      - "8000:8000"
+    volumes:
+      - ./hustlr:/usr/src/hustlr
+    command: /usr/local/bin/gunicorn --workers 4 --bind :8000 application:application
+    links:
+      - mongodb
+
   mongodb:
-    image: mongo
+    image: "mongo:latest"
+    ports:
+      - 27017:27017
+    environment:
+       - MONGO_DATA_DIR=/data/db
+    volumes:
+      - ./data/db:/data/db
+
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - 80:80
+    links:
+      - web:web
+
+
+
+
+
+
+
