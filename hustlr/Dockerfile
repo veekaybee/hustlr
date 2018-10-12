@@ -20,3 +20,5 @@ RUN pip3 install gunicorn
 # Activate directory
 ADD . /usr/src/hustlr
 WORKDIR /usr/src/hustlr
+
+COPY generate_name.py /generate_name.py

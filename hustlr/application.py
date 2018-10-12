@@ -1,13 +1,10 @@
 from flask import Flask, request, render_template
-from threading import Timer
-
+from threading import Timer, Thread
 import generate_name as gs
+
 
 application = Flask(__name__)
 
-# Connect to Mongo
-mongo = gs.MongoConnection("hn", "syllables")
-collection = mongo.get_collection()
 
 
 # Render main page
@@ -16,10 +13,12 @@ def index():
     return render_template('index.html')
 
 
+
 # Render results of Mongo load
 @application.route('/result',methods = ['POST','GET'])
 def result():
-
+    mongo = gs.MongoConnection("hn", "syllables")
+    collection = mongo.get_collection()
     items = gs.get_random_doc(collection)
 
     if request.method == 'GET':
@@ -27,10 +26,5 @@ def result():
 
 
 if __name__ == "__main__":
-    try:
-        gs.load_data(collection)
-    except KeyError:
-        print("No Port")
-    #Timer(3600, gs.load_data(collection)).start()
     application.run()
 

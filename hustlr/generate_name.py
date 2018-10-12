@@ -20,7 +20,7 @@ class MongoConnection():
 
     def __init__(self,db_name, collection_name):
 
-        self.client = MongoClient('localhost', 27017)
+        self.client = MongoClient('mongo', 27017)
         self.db = self.client[db_name]
         self.collection = self.db[collection_name]
 
@@ -52,8 +52,6 @@ def load_name_to_mongo():
 
     return mixed_bag
 
-    # Run HN update once an hour
-
 
 
 def load_data(collection):
@@ -66,13 +64,15 @@ def load_data(collection):
         syl= {"text": syllable,
                  "date": datetime.utcnow()}
 
-        syl_id = collection.insert_one(syl)
+        collection.insert_one(syl)
+        print(f"{syl} inserted")
 
 
 def get_random_doc(collection):
     """
         Generates a 2-syllable string to return to hustlr app
         """
+
 
     strings = []
 
@@ -84,8 +84,11 @@ def get_random_doc(collection):
 
     return f"{strings[0].upper()}{strings[1].upper()}"
 
-
-
+if __name__ == '__main__':
+    mongo = MongoConnection("hn", "syllables")
+    collection = mongo.get_collection()
+    load_data(collection)
+    # Timer(3600, load_data(collection)).start()
 
 
 
