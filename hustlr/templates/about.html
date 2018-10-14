@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jumbotron.css') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="icon" href="/static/favicon.io">
+
+
+    <title>Hack Ur Name</title>
+</head>
+<body>
+
+
+<div class="container">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #FF6600;">
+
+        <a class="navbar-brand" href='{{ url_for('index')}}'> <i class="fas fa-hand-holding-usd" style="font-size:30px;color:black"></i>
+            <div style="font-family: 'Merriweather Sans', sans-serif;">
+                Hack Ur Name
+        </a></a>
+
+        <a class="navbar-brand" href='{{ url_for('about')}}'>About the Project</a>
+
+    </nav>
+
+
+    <div class="jumbotron">
+
+
+        <div class="container">
+
+
+            <h2>Ever Want to Name a Startup?</h2>
+            <p align="left">Everyone knows the hardest part of development is naming things. Use
+            HackerNews take care of that for you. This project uses an Extremely Advanced
+            form of AI (Python's random module) to find the top 50 headlines on HN every
+            hour, break each proper noun into syllables, and recombine two random syllables
+            into a new startup name.
+
+            Feel free to share your startup name on Twitter or with me for lots of equity </p>
+
+            <h2>About the Creator</h2>
+
+            <p align="left"><a href="https://veekaybee.github.io"> Vicki Boykis</a> builds data projects using magic and Python and
+            decided to see what it would take to build web app using all the Latest Tech. As such,
+            pull requests to this project are welcome.</p>
+
+            <h2>
+            <i class="fab fa-github" style="font-size:30px;color:black"></i> <a href="https://github.com/veekaybee/hustlr">Project GitHub</a>
+ <i class="fab fa-twitter" style="font-size:30px;color:blue"></i> <a href="https://twitter.com/vboykis">Vicki's Twitter</a></h2>
+
+
+
+
+
+        </div>
+
+
+</body>
+
+<hr>
+<!-- Footer -->
+<footer class="page-footer font-small blue fixed-bottom">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://veekaybee.github.io"> Vicki Boykis</a>
+        <i class="fab fa-twitter" style="font-size:12px"></i>
+        <a href="https://twitter.com/vboykis"> @vboykis</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>

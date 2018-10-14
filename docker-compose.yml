@@ -3,7 +3,7 @@ version: '3'
 services:
 
   mongo:
-    build: ./mongo
+    image: mongo:latest
     ports:
     - 27017:27017
     environment:
@@ -11,22 +11,15 @@ services:
     volumes:
     - ./data/db:/data/db
 
-  nginx:
-    build: ./nginx
-    ports:
-    - 80:80
-    links:
-    - web:web
-
 
   web:
     build: ./hustlr
     ports:
-      - "8000:8000"
+      - "80:80"
     volumes:
       - ./hustlr:/usr/src/hustlr
     command: bash -c "python3 generate_name.py &&
-        /usr/local/bin/gunicorn --workers 4 --bind :8000 application:application"
+        /usr/local/bin/gunicorn --workers 4 --bind :80 application:application"
     links:
       - mongo
 

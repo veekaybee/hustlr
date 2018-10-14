@@ -1,56 +1,84 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jumbotron.css') }}">
+        <meta name="twitter:title" content="Hack Ur Name ">
+        <meta name="twitter:description" content="Let HN Create your startup name.">
+        <meta name="twitter:image" content="/static/favicon.ic">
+        <meta name="twitter:card" content="summary_large_image">
 
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jumbotron.css') }}">
 
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+              integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="icon" href="/static/favicon.ico">
+
+        <title>Hack Ur Name</title>
+    </head>
+    <body>
+
+
+    <div class="container">
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #FF6600;">
+
+            <a class="navbar-brand" href="href='{{ url_for('index')}}'"> <i class="fas fa-hand-holding-usd" style="font-size:30px;color:black"></i>
+                <div style="font-family: 'Merriweather Sans', sans-serif;">
+                    Hack Ur Name
+            </a></a>
+
+            <a class="navbar-brand" href='{{ url_for('about')}}'>About the Project</a>
+
+        </nav>
+
+
+        <div class="jumbotron">
+
+
+            <div class="container">
 
 
 
-    <title>Your Next Startup</title>
-</head>
-<body>
+                    <h1>Change the World</h1>
+                    <p>Let two randomly-generated syallbles from the top 50 HN headlines right now
+            decide your fate. </p>
 
-<div class="container">
-    <div class="jumbotron">
-        <div class="container">
-            <span class="glyphicon star" aria-hidden="true"></span>
-            <i class="fas fa-bolt" style="font-size:72px;color:yellow"></i><div style="font-family: 'Merriweather Sans', sans-serif;">
-                <h1>Change the World</h1>
 
-                <h1>Name a Startup</h1>
 
-                <hr class="my-4">
+                    <hr class="my-4">
+
+                <p><a href='/result' class="btn btn-primary btn-lg" role="button">Pivot Me Bro</a></p>
             </div>
-                    <p><a href='/result' class="btn btn-primary btn-lg" role="button">Pivot Me Bro</a></p>
-                </div>
-            </div>
+
+
         </div>
+    </div>
 
 
-</body>
+    </body>
 
-<hr>
-<!-- Footer -->
-<footer class="page-footer font-small blue fixed-bottom">
+    <hr>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue fixed-bottom">
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://veekaybee.github.io"> Vicki Boykis</a>
-      <i class="fab fa-twitter" style="font-size:12px"></i>
-      <a href="https://twitter.com/vboykis"> @vboykis</a>
-  </div>
-  <!-- Copyright -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://veekaybee.github.io"> Vicki Boykis</a>
+            <i class="fab fa-twitter" style="font-size:12px"></i>
+            <a href="https://twitter.com/vboykis"> @vboykis</a>
+        </div>
+        <!-- Copyright -->
 
-</footer>
-<!-- Footer -->
-</html>
+    </footer>
+    <!-- Footer -->
+    </html>
