@@ -9,7 +9,7 @@ from threading import Timer
 import os
 
 
-
+now = datetime.now()
 
 class MongoConnection():
 
@@ -54,18 +54,25 @@ def load_name_to_mongo():
 
 
 
-def load_data(collection):
+def load_data():
     """
-         Inserts into Mongo DB
-         """
+     Inserts into Mongo DB
+     """
 
-    for num,syllable in enumerate(load_name_to_mongo()):
+    mongo = MongoConnection("hn", "syllables")
+    collection = mongo.get_collection()
+
+    inserted = 0
+
+    for syllable in load_name_to_mongo():
 
         syl= {"text": syllable,
                  "date": datetime.utcnow()}
 
         collection.insert_one(syl)
-        print(f"{syl} inserted")
+        inserted += 1
+
+    print (f"{inserted} records inserted at {now}")
 
 
 def get_random_doc(collection):
@@ -85,10 +92,8 @@ def get_random_doc(collection):
     return f"{strings[0].upper()}{strings[1].upper()}"
 
 if __name__ == '__main__':
-    mongo = MongoConnection("hn", "syllables")
-    collection = mongo.get_collection()
-    load_data(collection)
-    # Timer(3600, load_data(collection)).start()
+    load_data()
+
 
 
 

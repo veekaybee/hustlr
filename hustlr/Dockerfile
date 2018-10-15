@@ -22,3 +22,7 @@ ADD . /usr/src/hustlr
 WORKDIR /usr/src/hustlr
 
 COPY generate_name.py /generate_name.py
+COPY update_mongo.py /update_mongo.py
+
+
+

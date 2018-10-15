@@ -3981,6 +3981,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav > li > a {
+  color: black !important;
   position: relative;
   display: block;
   padding: 10px 15px;
@@ -3989,6 +3990,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #eee;
+  color: black !important;
 }
 .nav > li.disabled > a {
   color: #777;
