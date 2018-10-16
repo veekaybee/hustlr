@@ -4,8 +4,7 @@ A Flask webapp with a Mongo backend that will generate a name of a startup based
 
 ![](https://raw.githubusercontent.com/veekaybee/hustlr/master/static/startup2.png)
 
-~~~*** Under Active Development ~~~***
-
+To see it in action, [go here.](http://hackurname.com/) 
 
 ## About
 
@@ -47,8 +46,8 @@ print(f"{random.choice(mixed_bag).upper()}{random.choice(mixed_bag).upper()}")
 ## To Build Locally:
 
 1. Clone repo
-2. Install Mongo + Python
-3. Run Docker Container
-4. Go to localhost:5000
-5. ???????
-6. Profit and give me some equity
+2. Install `Mongo`, `Python3`, `Docker`, and `Docker-Compose`.
+3. CD into the repo. 
+4. Run `docker-compose build`
+5. Run `docker-compose up`
+6. Navigate to `localhost` on your browser. 
